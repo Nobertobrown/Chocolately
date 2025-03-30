@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/bg"
     tools:context=".LoginScreen">
 
@@ -19,103 +18,136 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165"
+        app:layout_constraintVertical_bias="0.03"
         app:srcCompat="@drawable/logo" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="-80dp"
+        android:backgroundTint="@color/brown_600"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="1"
-        tools:layout_editor_absoluteX="-26dp"
-        >
+        tools:layout_editor_absoluteX="-26dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp"
-            >
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="130dp">
 
             <TextView
                 android:id="@+id/textView2"
+                style="@style/text_lg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/login_to_your_account" />
+                android:layout_marginVertical="@dimen/size_sm"
+                android:text="@string/login_to_your_account"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/editTextText"
+                style="@style/edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext_border"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Email or Phone Number" />
+                android:hint="Email or Phone Number"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/editTextTextPassword"
+                style="@style/edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_edittext_border"
+                android:drawableEnd="@drawable/baseline_remove_red_eye_24"
+                android:drawablePadding="8dp"
                 android:ems="10"
+                android:hint="Password"
                 android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/textView3"
+                style="@style/text_sm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password?"
-                android:gravity="right"
-                />
+                android:layout_marginBottom="20dp"
+                android:gravity="end"
+                android:text="Forgot Password?" />
 
             <Button
                 android:id="@+id/button"
+                style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login" />
+                android:backgroundTint="@color/brown_950"
+                android:textColor="@color/white"
+                android:text="Login"
+                app:cornerRadius="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                >
+                android:orientation="horizontal">
 
                 <View
                     android:id="@+id/divider"
                     android:layout_width="2dp"
-                    android:layout_height="1dp"
+                    android:layout_height="2dp"
                     android:layout_weight="1"
                     android:background="?android:attr/listDivider" />
 
                 <TextView
                     android:id="@+id/textView4"
+                    style="@style/text_sm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
                     android:text="or" />
 
                 <View
                     android:id="@+id/divider2"
                     android:layout_width="2dp"
-                    android:layout_height="1dp"
+                    android:layout_height="2dp"
                     android:layout_weight="1"
                     android:background="?android:attr/listDivider" />
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/imageButton"
+            <Button
+                android:id="@+id/Button2"
+                style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                android:backgroundTint="@color/white"
+                android:text="Sign in with google"
+                android:textColor="@color/black"
+                app:cornerRadius="8dp"
+                android:drawableLeft="@drawable/icons8_google"
+                />
 
-            <ImageButton
-                android:id="@+id/imageButton2"
+            <Button
+                android:id="@+id/Button3"
+                style="@style/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                android:backgroundTint="@color/white"
+                android:text="Sign in with facebook"
+                android:textColor="@color/black"
+                app:cornerRadius="8dp"
+                android:drawableLeft="@drawable/icons8_facebook"
+                />
 
             <TextView
                 android:id="@+id/textView5"
+                style="@style/text_sm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account? Sign Up" />

@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="brown_50">#faf6ec</color>
+    <color name="brown_100">#f2eacf</color>
+    <color name="brown_200">#e6d4a2</color>
+    <color name="brown_300">#d8b76c</color>
+    <color name="brown_400">#cb9d44</color>
+    <color name="brown_500">#bc8836</color>
+    <color name="brown_600">#a26b2c</color>
+    <color name="brown_700">#824f26</color>
+    <color name="brown_800">#6d4226</color>
+    <color name="brown_900">#5e3825</color>
+    <color name="brown_950">#442417</color>
 </resources>

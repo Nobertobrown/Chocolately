@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Fonts -->
+    <style name="text_xs" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_xs</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_thin</item>
+    </style>
+
+    <style name="text_sm" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_sm</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_regular</item>
+        <item name="android:textColor">@color/brown_950</item>
+    </style>
+
+    <style name="text_md" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_medium</item>
+    </style>
+
+    <style name="text_lg" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+    </style>
+
+    <style name="text_xl" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_xl</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+    </style>
+
+    <style name="text_xxl" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_xxl</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_extra_bold</item>
+    </style>
+
+    <style name="edit_text">
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginVertical">8dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_alternates_regular</item>
+    </style>
+
+    <style name="button">
+        <item name="android:textSize">@dimen/text_md</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginVertical">4dp</item>
+        <item name="fontFamily">@font/montserrat_alternates_semi_bold</item>
+    </style>
+</resources>
