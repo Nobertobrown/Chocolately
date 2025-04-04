@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -20,5 +21,30 @@ public class SplashScreen extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        displaySplash();
+    }
+
+    public void displaySplash() {
+        Thread mythread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    int displaytime = 1000;
+                    int waittime = 0;
+                    while (waittime < displaytime) {
+                        sleep(100);
+                        waittime = waittime + 100;
+                    }
+                    super.run();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    Intent a = new Intent(SplashScreen.this, LoginScreen.class);
+                    startActivity(a);
+                    finish();
+                }
+            }
+        };
+        mythread.start();
     }
 }
