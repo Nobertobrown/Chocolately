@@ -37,12 +37,19 @@
         <item name="android:layout_marginVertical">8dp</item>
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/montserrat_alternates_regular</item>
+        <item name="hintTextColor">@color/black</item>
     </style>
 
     <style name="button">
         <item name="android:textSize">@dimen/text_md</item>
         <item name="android:padding">12dp</item>
-        <item name="android:layout_marginVertical">4dp</item>
         <item name="fontFamily">@font/montserrat_alternates_semi_bold</item>
+    </style>
+
+    <style name="icon_button">
+        <item name="android:padding">10dp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/corner_radius</item>
     </style>
 </resources>

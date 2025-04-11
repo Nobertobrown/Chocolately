@@ -2,4 +2,6 @@
     <string name="app_name">Demo</string>
     <string name="logo">logo</string>
     <string name="login_to_your_account">Login to your Account</string>
+    <string name="get_started">Let\'s Get\nStarted!</string>
+    <string name="continue_with">Continue with</string>
 </resources>
