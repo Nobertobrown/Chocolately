@@ -20,12 +20,11 @@ import androidx.credentials.CredentialManager;
 import androidx.credentials.CredentialManagerCallback;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
-    public String name;
+    public String name, email;
 
     private static final String TAG = "MainActivity";
     public TextView greetings;
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         greetings = findViewById(R.id.intro);
         logoutBtn = findViewById(R.id.logoutBtn);
         name = getIntent().getStringExtra("name");
+        email = getIntent().getStringExtra("email");
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -60,7 +60,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        greetings.setText(String.format("Hello %s", name));
+        if (name != null) {
+            greetings.setText(String.format("Hello %s", name));
+        } else {
+            greetings.setText(String.format("Hello %s", email));
+        }
     }
 
     private void signOut(View view) {
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 new CredentialManagerCallback<>() {
                     @Override
                     public void onResult(@NonNull Void result) {
-                        updateUI(null);
+                        updateUI();
                     }
 
                     @Override
@@ -86,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void updateUI(FirebaseUser user) {
+    private void updateUI() {
         Intent intent = new Intent(MainActivity.this, LoginScreen.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

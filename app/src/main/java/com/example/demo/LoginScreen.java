@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +27,6 @@ import androidx.credentials.GetCredentialRequest;
 import androidx.credentials.GetCredentialResponse;
 import androidx.credentials.exceptions.GetCredentialException;
 
-import com.google.android.libraries.identity.googleid.GetGoogleIdOption;
 import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption;
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential;
 import com.google.firebase.auth.AuthCredential;
@@ -69,7 +69,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
         credentialManager = CredentialManager.create(this);
 
         sign_in_with_google.setOnClickListener(this::handleSignInWithGoogle);
-        submit.setOnClickListener(this::onClick);
+        submit.setOnClickListener(this);
         sign_up_link.setOnClickListener(this::onLinkClick);
     }
 
@@ -85,20 +85,19 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        String usernameInput = email.getText().toString().trim();
+        String emailInput = email.getText().toString().trim();
         String passwordInput = password.getText().toString().trim();
+        String message;
 
-        if (usernameInput.equals("noberto") && passwordInput.equals("123456")) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            this.finish();
-        } else if (usernameInput.isBlank() || passwordInput.isBlank()) {
-            String message = "Please fill required inputs!";
+        if (emailInput.isBlank() || !Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+            message = "Enter a valid email address!";
+            email.setError(message);
 //           You can display an error in the component using email.setEror('Error msg');
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        } else if (passwordInput.isBlank()) {
+            message = "Password is a required field!";
+            password.setError(message);
         } else {
-            String message = "Wrong username or password!";
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            signIn(emailInput, passwordInput);
         }
     }
 
@@ -106,6 +105,25 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
         Intent b = new Intent(this, SignUpScreen.class);
         startActivity(b);
         this.finish();
+    }
+
+    private void signIn(String email, String password) {
+        // [START sign_in_with_email]
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "signInWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                        Toast.makeText(LoginScreen.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+        // [END sign_in_with_email]
     }
 
     public void handleSignInWithGoogle(View view) {

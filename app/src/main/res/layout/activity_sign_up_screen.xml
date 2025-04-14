@@ -27,56 +27,49 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/editTextFullName"
+            android:id="@+id/email"
             style="@style/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edittext_border"
             android:ems="10"
-            android:hint="Full Name"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/editTextEmail"
-            style="@style/edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext_border"
-            android:ems="10"
-            android:hint="Email Address"
+            android:autofillHints="emailAddress"
+            android:hint="@string/email_address"
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/password"
             style="@style/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edittext_border"
             android:drawableEnd="@drawable/baseline_remove_red_eye_24"
             android:drawablePadding="8dp"
+            android:autofillHints="password"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editTextTextConfirmPassword"
+            android:id="@+id/confirmPassword"
             style="@style/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edittext_border"
             android:drawableEnd="@drawable/baseline_remove_red_eye_24"
             android:drawablePadding="8dp"
+            android:autofillHints="password"
             android:ems="10"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/signUpBtn"
             style="@style/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/brown_950"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
             app:cornerRadius="8dp" />
@@ -86,7 +79,7 @@
             style="@style/text_sm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account? Login" />
+            android:text="@string/already_have_an_account_login" />
 
     </LinearLayout>
 
