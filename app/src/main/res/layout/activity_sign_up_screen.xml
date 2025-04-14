@@ -11,10 +11,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:paddingHorizontal="20dp"
-        android:paddingBottom="130dp">
+        android:paddingVertical="130dp">
 
         <TextView
             android:id="@+id/textView2"
@@ -25,65 +25,6 @@
             android:text="@string/get_started"
             android:gravity="start"
             android:textColor="@color/black" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/Button2"
-                style="@style/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:text="Sign up with google"
-                android:textColor="@color/black"
-                app:cornerRadius="8dp"
-                android:drawableLeft="@drawable/icons8_google"
-                />
-
-            <Button
-                android:id="@+id/Button3"
-                style="@style/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:text="Sign up with facebook"
-                android:textColor="@color/black"
-                app:cornerRadius="8dp"
-                android:drawableLeft="@drawable/icons8_facebook"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="2dp"
-                android:layout_height="2dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
-
-            <TextView
-                android:id="@+id/textView4"
-                style="@style/text_sm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="6dp"
-                android:text="or" />
-
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="2dp"
-                android:layout_height="2dp"
-                android:layout_weight="1"
-                android:background="?android:attr/listDivider" />
-        </LinearLayout>
 
         <EditText
             android:id="@+id/editTextFullName"
@@ -136,6 +77,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/brown_950"
             android:text="Sign Up"
+            android:layout_marginTop="30dp"
             android:textColor="@color/white"
             app:cornerRadius="8dp" />
 

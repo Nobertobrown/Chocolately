@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  onNavigationItemSelect  -->
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/contacts"
+        android:title="Contacts" />
+    <item
+        android:id="@+id/settings"
+        android:title="Settings" />
+</menu>

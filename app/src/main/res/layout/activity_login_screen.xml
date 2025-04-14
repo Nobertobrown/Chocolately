@@ -96,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:layout_marginVertical="10dp"
                 android:orientation="horizontal">
 
                 <View
@@ -131,18 +132,6 @@
                 android:textColor="@color/black"
                 app:cornerRadius="8dp"
                 android:drawableLeft="@drawable/icons8_google"
-                />
-
-            <Button
-                android:id="@+id/Button3"
-                style="@style/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:text="Sign in with facebook"
-                android:textColor="@color/black"
-                app:cornerRadius="8dp"
-                android:drawableLeft="@drawable/icons8_facebook"
                 />
 
             <TextView
