@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittext_border"
                 android:ems="10"
-                android:hint="Email"
+                android:hint="@string/email_address"
                 android:inputType="textEmailAddress" />
 
             <EditText
@@ -70,7 +70,7 @@
                 android:drawableEnd="@drawable/baseline_remove_red_eye_24"
                 android:drawablePadding="8dp"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:gravity="end"
-                android:text="Forgot Password?" />
+                android:text="@string/forgot_password" />
 
             <Button
                 android:id="@+id/loginBtn"
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/brown_950"
                 android:textColor="@color/white"
-                android:text="Login"
+                android:text="@string/login"
                 app:cornerRadius="8dp" />
 
             <LinearLayout
